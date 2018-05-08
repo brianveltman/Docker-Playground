@@ -1,0 +1,7 @@
+
+# Vagrant specific files
+.vagrant/
+*.box
+
+# Common stuff
+.DS_Store
