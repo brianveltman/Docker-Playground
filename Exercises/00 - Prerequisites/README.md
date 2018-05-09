@@ -16,8 +16,8 @@ During the workshop basic knowledge of Linux, Git and networking is required.
 ```sh
 $ ssh root@127.0.0.1:2222 # to connect to node-1
 $ ssh root@127.0.0.1:2200 # to connect to node-2
-$ ssh root@127.0.0.1:2222 # to connect to manager-1
-$ ssh root@127.0.0.1:2222 # to connect to manager-2
-$ ssh root@127.0.0.1:2222 # to connect to manager-3
+$ ssh root@127.0.0.1:2201 # to connect to manager-1
+$ ssh root@127.0.0.1:2202 # to connect to manager-2
+$ ssh root@127.0.0.1:2203 # to connect to manager-3
 ```
 
