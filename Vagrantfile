@@ -7,18 +7,24 @@
 # you're doing.
 
 Vagrant.configure("2") do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
-
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
   config.vm.box = "brianveltman/docker-ce-stable"
   config.vm.box_version = "1.0.0"
-
-  # Disable automatic box update checking. If you disable this, then
-  # boxes will only be checked for updates when the user runs
-  # `vagrant box outdated`. This is not recommended.
   config.vm.box_check_update = false
 
+  N = 2 # Number of Docker hosts to work with
+  M = 3 # Number of Docker manager nodes to work with
+
+  (1..N).each do |node_id|
+    config.vm.define "docker_node#{node_id}" do |node|
+      node.vm.hostname = "node-#{node_id}"
+      node.vm.network "private_network", ip: "192.168.77.#{20+node_id}"
+      end
+    end
+
+  (1..M).each do |manager_id|
+    config.vm.define "docker_manager#{manager_id}" do |manager|
+      manager.vm.hostname = "manager-#{manager_id}"
+      manager.vm.network "private_network", ip: "192.168.77.#{21+manager_id}"
+    end
+  end  
 end
