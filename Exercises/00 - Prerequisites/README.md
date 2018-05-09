@@ -20,5 +20,5 @@ $ ssh -p 2201 root@127.0.0.1 # to connect to manager-1
 $ ssh -p 2202 root@127.0.0.1 # to connect to manager-2
 $ ssh -p 2203 root@127.0.0.1 # to connect to manager-3
 ```
-For an overview of the available user credentials see [](../Vagrant-Base)
+For an overview of the available user credentials see [the base image](../Vagrant-Base)
 
